@@ -7,7 +7,7 @@ gsap.registerPlugin(ScrollTrigger)
 
 export default function App() {
   
-  const container = useRef()
+  const sectionRef = useRef()
 
 //uselayouteffect
 useLayoutEffect(() => {
@@ -38,6 +38,7 @@ const rightLeaves = document.querySelectorAll('[href="#rightLeave"]');
 const smallLeaves = document.querySelectorAll('[href="#smallLeaf"]');
 const text = document.querySelector('.text');
 const letters = document.querySelectorAll('.text path');
+
 leftLeaves.forEach((leaf, i) => {
   const index = i / (leftLeaves.length - 1);
   gsap.set(leaf, {
@@ -103,8 +104,8 @@ smallLeaves.forEach((leaf, i) => {
 letters.forEach((letter, i) => {
   gsap.from(letter, {
     scrollTrigger: {
-      trigger: "body",
-      scrub: 0.2,
+      trigger: sectionRef.current,
+      scrub: 0.5,
       start: `${(i / (letters.length - 1)) * 50 + 30}% bottom`,
       end: `${(i / (letters.length - 1)) * 50 + 50}% bottom`
     },
@@ -137,7 +138,7 @@ requestAnimationFrame(() => {
 
 
   return (
-    <div className="App">
+    <div ref={sectionRef} className="h-[400vh]">
       
 
       {/* ********************** */}
