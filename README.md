@@ -1,1 +1,1 @@
-# learn_REACT
+# prima animation e seconda modal potenzialmente contenente informazioni

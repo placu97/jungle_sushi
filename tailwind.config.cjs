@@ -6,7 +6,11 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+      }
+    },
   },
   plugins: [],
 }
